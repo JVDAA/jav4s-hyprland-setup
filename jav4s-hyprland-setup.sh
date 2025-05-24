@@ -15,7 +15,7 @@ sudo pacman -S --noconfirm git curl wget base-devel dconf
 
 if ! command -v yay &> /dev/null; then
     echo "🛠️ Instalando yay..."
-    git clone https://aur.archlinux.org/yay.git
+    git clone --depth=1 https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si --noconfirm
     cd ..
@@ -30,13 +30,13 @@ yay -S --noconfirm brave-bin spotify winbox ferdium-bin neofetch || sudo pacman 
 echo "🎨 Instalando temas WhiteSur e Papirus..."
 sudo pacman -S --noconfirm papirus-icon-theme gtk-engine-murrine gtk-engines
 
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
+git clone --depth=1 https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 cd WhiteSur-gtk-theme
 ./install.sh -l
 cd ..
 rm -rf WhiteSur-gtk-theme
 
-git clone https://github.com/vinceliuice/WhiteSur-grub-theme.git
+git clone --depth=1 https://github.com/vinceliuice/WhiteSur-grub-theme.git
 cd WhiteSur-grub-theme
 sudo ./install.sh -t dark
 cd ..
@@ -45,7 +45,7 @@ rm -rf WhiteSur-grub-theme
 sudo pacman -S --noconfirm sddm
 sudo systemctl enable sddm
 
-git clone https://github.com/vinceliuice/WhiteSur-kde.git
+git clone --depth=1 https://github.com/vinceliuice/WhiteSur-kde.git
 cd WhiteSur-kde/sddm
 sudo ./install.sh
 cd ../../
