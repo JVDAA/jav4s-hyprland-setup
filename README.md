@@ -1,0 +1,2 @@
+# Hypr
+My Hyprland Repository 
