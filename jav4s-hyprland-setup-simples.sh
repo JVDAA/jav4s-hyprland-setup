@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ================================
-# 🚀 Jav4s Hyprland Setup Script (Versão Simples)
+# 🚀 Jav4s Hyprland Setup Script (Versão Simples Atualizada)
 # 🔥 Desenvolvido por Joao "Jav4s" Victor
 # ================================
 
@@ -75,16 +75,7 @@ alias ping='ping -c 5'
 alias traceroute='traceroute -I'
 EOF
 
-echo "🔧 Você deseja instalar as linguagens de desenvolvimento?"
-select yn in "Sim" "Não"; do
-    case $yn in
-        Sim )
-            sudo pacman -S --noconfirm jdk8-openjdk jdk-openjdk nodejs npm yarn php php-cli php-gd php-curl php-intl php-pgsql php-sqlite php-zip composer python python-pip go
-            composer global require laravel/installer
-            echo 'export PATH="$PATH:$HOME/.config/composer/vendor/bin"' >> ~/.zshrc
-            break;;
-        Não ) echo "⏭️ Pulando instalação das linguagens..."; break;;
-    esac
-done
+echo "🔧 Instalando linguagens de desenvolvimento (Java, Node, Python, Golang)..."
+sudo pacman -S --noconfirm jdk8-openjdk jdk-openjdk nodejs npm yarn python python-pip go
 
 echo "🎉 Setup finalizado com sucesso! Reinicie sua sessão e aproveite!"
