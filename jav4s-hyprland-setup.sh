@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # ================================
@@ -33,7 +32,7 @@ sudo pacman -S --noconfirm papirus-icon-theme gtk-engine-murrine gtk-engines
 
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git
 cd WhiteSur-gtk-theme
-./install.sh -D
+./install.sh -l
 cd ..
 rm -rf WhiteSur-gtk-theme
 
