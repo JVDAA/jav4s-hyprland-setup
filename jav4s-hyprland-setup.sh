@@ -1,7 +1,10 @@
 
 #!/bin/bash
+
+# ================================
 # 🚀 Jav4s Hyprland Setup Script
 # 🔥 Desenvolvido por Joao "Jav4s" Victor
+# ================================
 
 set -e
 
@@ -24,14 +27,6 @@ echo "🖥️ Instalando Hyprland e apps essenciais..."
 sudo pacman -S --noconfirm hyprland hyprpaper waybar wofi swww kitty thunar gvfs gvfs-mtp gvfs-gphoto2 udiskie polkit-kde-agent pipewire pipewire-pulse wireplumber pavucontrol network-manager-applet grim slurp wl-clipboard swappy qt5-wayland qt6-wayland xdg-desktop-portal-hyprland nwg-look nmap traceroute figlet lolcat
 
 yay -S --noconfirm brave-bin spotify winbox ferdium-bin neofetch || sudo pacman -S --noconfirm fastfetch
-
-echo "🖼️ Baixando wallpapers..."
-mkdir -p ~/Pictures/Wallpapers
-cd ~/Pictures/Wallpapers
-wget -O wallpaper-1.jpg "https://images.alphacoders.com/137/1371030.jpg"
-wget -O wallpaper-2.jpg "https://images.alphacoders.com/030/30173.jpg"
-wget -O wallpaper-3.jpg "https://images.alphacoders.com/130/1307235.jpg"
-cd ~
 
 echo "🎨 Instalando temas WhiteSur e Papirus..."
 sudo pacman -S --noconfirm papirus-icon-theme gtk-engine-murrine gtk-engines
