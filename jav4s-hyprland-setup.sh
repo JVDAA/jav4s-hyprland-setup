@@ -11,7 +11,7 @@ echo "🔧 Atualizando sistema..."
 sudo pacman -Syu --noconfirm
 
 echo "🚀 Instalando dependencias..."
-sudo pacman -S --noconfirm git curl wget base-devel dconf
+sudo pacman -S --noconfirm git curl wget base-devel dconf unzip
 
 if ! command -v yay &> /dev/null; then
     echo "🛠️ Instalando yay..."
@@ -30,26 +30,35 @@ yay -S --noconfirm brave-bin spotify winbox ferdium-bin neofetch || sudo pacman 
 echo "🎨 Instalando temas WhiteSur e Papirus..."
 sudo pacman -S --noconfirm papirus-icon-theme gtk-engine-murrine gtk-engines
 
-git clone --depth=1 https://github.com/vinceliuice/WhiteSur-gtk-theme.git
-cd WhiteSur-gtk-theme
+mkdir -p ~/Downloads/WhiteSur-gtk-theme
+cd ~/Downloads/WhiteSur-gtk-theme
+wget https://github.com/vinceliuice/WhiteSur-gtk-theme/archive/refs/heads/master.zip
+unzip master.zip
+cd WhiteSur-gtk-theme-master
 ./install.sh -l
-cd ..
-rm -rf WhiteSur-gtk-theme
+cd ~
+rm -rf ~/Downloads/WhiteSur-gtk-theme
 
-git clone --depth=1 https://github.com/vinceliuice/WhiteSur-grub-theme.git
-cd WhiteSur-grub-theme
+mkdir -p ~/Downloads/WhiteSur-grub-theme
+cd ~/Downloads/WhiteSur-grub-theme
+wget https://github.com/vinceliuice/WhiteSur-grub-theme/archive/refs/heads/master.zip
+unzip master.zip
+cd WhiteSur-grub-theme-master
 sudo ./install.sh -t dark
-cd ..
-rm -rf WhiteSur-grub-theme
+cd ~
+rm -rf ~/Downloads/WhiteSur-grub-theme
 
 sudo pacman -S --noconfirm sddm
 sudo systemctl enable sddm
 
-git clone --depth=1 https://github.com/vinceliuice/WhiteSur-kde.git
-cd WhiteSur-kde/sddm
+mkdir -p ~/Downloads/WhiteSur-kde
+cd ~/Downloads/WhiteSur-kde
+wget https://github.com/vinceliuice/WhiteSur-kde/archive/refs/heads/master.zip
+unzip master.zip
+cd WhiteSur-kde-master/sddm
 sudo ./install.sh
-cd ../../
-rm -rf WhiteSur-kde
+cd ~
+rm -rf ~/Downloads/WhiteSur-kde
 
 yay -S --noconfirm nerd-fonts-jetbrains-mono
 
