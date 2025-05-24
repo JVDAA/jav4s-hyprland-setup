@@ -21,9 +21,9 @@ if ! command -v yay &> /dev/null; then
 fi
 
 echo "🖥️ Instalando Hyprland e apps essenciais..."
-sudo pacman -S --noconfirm hyprland hyprpaper waybar wofi swww kitty thunar gvfs gvfs-mtp gvfs-gphoto2 udiskie polkit-kde-agent pipewire pipewire-pulse wireplumber pavucontrol network-manager-applet grim slurp wl-clipboard swappy qt5-wayland qt6-wayland xdg-desktop-portal-hyprland nwg-look neofetch nmap traceroute figlet lolcat
+sudo pacman -S --noconfirm hyprland hyprpaper waybar wofi swww kitty thunar gvfs gvfs-mtp gvfs-gphoto2 udiskie polkit-kde-agent pipewire pipewire-pulse wireplumber pavucontrol network-manager-applet grim slurp wl-clipboard swappy qt5-wayland qt6-wayland xdg-desktop-portal-hyprland nwg-look nmap traceroute figlet lolcat
 
-yay -S --noconfirm brave-bin spotify winbox ferdium-bin
+yay -S --noconfirm brave-bin spotify winbox ferdium-bin neofetch || sudo pacman -S --noconfirm fastfetch
 
 echo "🖼️ Baixando wallpapers..."
 mkdir -p ~/Pictures/Wallpapers
@@ -97,7 +97,7 @@ source \$ZSH/oh-my-zsh.sh
 
 clear
 figlet "Joao 'Jav4s' Victor" | lolcat
-neofetch
+(neofetch || fastfetch)
 
 alias ls='ls --color=auto'
 alias ll='ls -la'
